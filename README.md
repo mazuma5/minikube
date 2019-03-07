@@ -13,8 +13,9 @@ mv ./kubectl /usr/bin/kubectl
 
 minikube start --vm-driver=none 
 
-kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080 
-
+kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080 \
+kubectl expose deployment hello-minikube --type=NodePort \
+curl $(minikube service hello-minikube --url) \
 kubectl get pod 
 
 kubectl get nodes \
