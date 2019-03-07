@@ -11,10 +11,10 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.23.0/minik
   && sudo mv ./minikube /usr/local/bin/minikube
 
 
-minikube start
-kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080
-kubectl get pod
-curl $(minikube service hello-minikube --url)
-kubectl delete services hello-minikube
-kubectl delete deployment hello-minikube
-minikube stop
+minikube start --vm-driver=none \
+kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080 \
+kubectl get pod \
+curl $(minikube service hello-minikube --url) \
+kubectl delete services hello-minikube \
+kubectl delete deployment hello-minikube \
+minikube stop \
