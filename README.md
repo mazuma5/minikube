@@ -17,4 +17,4 @@ kubectl get pod \
 curl $(minikube service hello-minikube --url) \
 kubectl delete services hello-minikube \
 kubectl delete deployment hello-minikube \
-minikube stop \
+minikube stop 
