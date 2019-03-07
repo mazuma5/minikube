@@ -24,5 +24,5 @@ kubectl delete deployment hello-minikube \
 minikube stop \
 
 
-minikube delete \
+minikube delete 
 rm -rf ~/.minikube
